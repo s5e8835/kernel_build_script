@@ -9,7 +9,7 @@ TMPDIR="$(pwd)/kernel_build/tmp"
 
 IN_PLATFORM="$(pwd)/kernel_build/vboot_platform/${DEVICE}"
 IN_DLKM="$(pwd)/kernel_build/vboot_dlkm/${DEVICE}"
-IN_DTB="$OUTDIR/arch/arm64/boot/dts/exynos/s5e8535.dtb"
+IN_DTB="$OUTDIR/arch/arm64/boot/dts/exynos/s5e8835.dtb"
 
 PLATFORM_RAMDISK_DIR="$TMPDIR/ramdisk_platform"
 DLKM_RAMDISK_DIR="$TMPDIR/ramdisk_dlkm"
@@ -72,7 +72,7 @@ mkdir "$PLATFORM_RAMDISK_DIR"
 
 cp -rf "$IN_PLATFORM"/* "$PLATFORM_RAMDISK_DIR/"
 mkdir "$PLATFORM_RAMDISK_DIR/first_stage_ramdisk"
-cp -f "$PLATFORM_RAMDISK_DIR/fstab.s5e8535" "$PLATFORM_RAMDISK_DIR/first_stage_ramdisk/fstab.s5e8535"
+cp -f "$PLATFORM_RAMDISK_DIR/fstab.s5e8835" "$PLATFORM_RAMDISK_DIR/first_stage_ramdisk/fstab.s5e8835"
 
 if ! find "$MODULES_OUTDIR/lib/modules" -mindepth 1 -type d | read; then
     echo "Unknown error!"
